@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+   {{ category.name }}
+{% endblock %}
+
+{% block content %}
+   <div class="allConcepts">
+       <div class="categoryName">
+           <h1>
+               {{category.name }}
+           </h1>
+           <p>
+               {{ category.info }}
+           </p>
+       </div>
+    <div class="card-deck">
+        {% for a in concepts %}
+             <div class="col-md-4 col-sm-12">
+                 <div class="card shadow">
+                     <a href="{% url 'concept-detail' a.id %}"><img src="{{a.concept_cover_image.url}}" class="card-img-top"  alt="..." ></a>
+                     <div class="card-body">
+                         <h5 class="card-title">{{a.name }}</h5>
+                     </div>
+                 </div>
+             </div>
+        {% endfor %}
+    </div>
+   </div>
+
+{% endblock %}

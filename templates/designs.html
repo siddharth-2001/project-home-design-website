@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+   {{type}} Designs
+{% endblock %}
+
+{% block content %}
+   {% if type == 'Office'%}
+    <div class="topBanner" style="background-image:url('https://images.unsplash.com/photo-1595847902982-f20169d4ddad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+    {% else %}
+    <div class="topBanner" style="background-image: url('https://images.unsplash.com/photo-1467987506553-8f3916508521?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+    {% endif %}
+       <div class="slogan">
+            All <br> Our <br> {{type}}  <br> Designs
+       </div>
+   </div>
+   <div class="allDesignList">
+       <div class="card-deck">
+           {% for a in designs %}
+                <div class="col-md-4 col-sm-12">
+                    <div class="card shadow-sm">
+                        <a href="{% url 'design-detail' a.id %}"><img src="{{a.cover_image.url}}" class="card-img-top"  alt="..." ></a>
+                        <div class="card-body">
+                            <h5 class="card-title">{{a.name }}</h5>
+                        </div>
+                    </div>
+                </div>
+           {% endfor %}
+       </div>
+       <div class="pagination">
+                <div class="body">
+                    <span class="step-links">
+                        {% if designs.has_previous %}
+                            <a href="?page=1">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                </svg>
+                            </a>
+                            <a href="?page={{ designs.previous_page_number }}">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                                  </svg>
+                            </a>
+                        {% endif %}
+                        <span class="current">
+                            Page {{ designs.number }} of {{ designs.paginator.num_pages }}
+                        </span>
+                        {% if designs.has_next %}
+                            <a href="?page={{ designs.next_page_number }}">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                            <a href="?page={{ designs.paginator.num_pages }}">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                    <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </a>
+                        {% endif %}
+                    </span>
+                </div>
+       </div> 
+        </div>
+  
+{% endblock %}

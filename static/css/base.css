@@ -1,0 +1,348 @@
+body {
+    
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+.cont-btn {
+    background-color:#7395AE;
+    border-radius: 50px ;
+    margin-right: 20px;
+    
+}
+.book .cont-btn-end {
+    background-color:#B1A296;
+    border-radius: 50px ;
+    width: 220px;
+    text-align: center;
+    height: 50px;
+    margin-top: 20px;
+    padding-top: 10px;
+    margin-left: 20px;
+}
+.cont-btn :hover {
+    background-color: #026670;
+    border-radius: 50px ;
+
+}
+.cont-btn a{
+    
+    letter-spacing: 1.5px;
+    font-family: 'Oswald', sans-serif !important;
+    color:white !important;
+
+}
+.book .cont-btn-end a{
+    
+    letter-spacing: 1.5px;
+    font-family: 'Oswald', sans-serif !important;
+    color: white !important;
+    font-size: 20px;
+    text-decoration: none;
+
+}
+.navbar {
+    opacity: 100%
+}
+
+.navbar .navbar-brand{
+    margin-left: 25px;
+    font-family: 'scriptina';
+    font-weight: 900;
+    font-size: 25px;
+
+}
+.nav-item a {
+    font-family:'Oswald', sans-serif;
+    font-size: 15px;
+}
+h1 ,h2,h3,h4,h5,h6 {
+    font-family: 'Oswald', sans-serif;
+    
+}
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    display:inline-block;
+    float: none;
+}
+
+.banner{
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1584622781564-1d987f7333c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+}
+.banner .slogan {
+    font-size: 100px;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-family:'Oswald', sans-serif;
+}
+
+.features {
+    padding: 50px;
+    background-color: rgb(239,235,233);
+    
+}
+.featureHead{
+    text-align: center;
+   
+}
+.featureHead p {
+    color: #B1A296;
+}
+.features .row {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.features .row .cont {
+    height: 200px;
+    background-color: white;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0 auto;
+    padding-top: 30px;
+    color:black;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+}
+
+.features .row .cont1 {
+    background-color: #7395AE;
+    
+}
+
+.features .row .cont2 {
+    background-color: #B1A296;
+    
+}
+
+.features .row .cont3 {
+    background-color: #557A95;
+    
+}
+.showcase{
+    padding: 50px;
+    text-align: center;
+}
+.showcase .showcaseHead p {
+    color: #B1A296;
+}
+.showcase .row {
+    justify-content: center;
+}
+.services {
+    padding: 50px;
+    background-color:rgb(239,235,233);
+    text-align: center;
+}
+
+.serviceHead p {
+    color: #B1A296;
+}
+
+.services .card-deck {
+    justify-content: center;
+}
+
+.services .card-deck .card {
+    max-width: 90%;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+.services .card-deck .card .card-body {
+    text-align: center;
+}
+
+.book {
+    height: 350px;
+    background-image: url("https://images.unsplash.com/photo-1542436781-fb5c64ed9ee6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1573&q=80");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.nav-bottom {
+    height: 300px;
+
+}
+
+.nav-bottom  a {
+    text-decoration: none;
+    color:#B1A296;
+    list-style-type: none !important;
+    
+}
+.nav-bottom .brand a{
+    font-family: "scriptina";
+    font-weight: 900;
+    font-size: 30px;
+    text-decoration: none;
+    color: #B1A296;
+}
+.nav-bottom .social a{
+    text-decoration: none;
+    margin: 5px;
+    color: #B1A296;
+   
+}
+.nav-bottom .social{
+    margin-top: 20px;
+}
+
+.nav-bottom .links {
+    padding-left: 10px;
+}
+
+.nav-bottom .links ul{
+    list-style-type: none;
+}
+.nav-bottom .links a{
+    text-decoration: none;
+    color: #B1A296;
+    font-size: 15px;
+    font-family: 'Oswald', sans-serif;
+}
+.topBanner {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.topBanner .slogan {
+    font-size: 100px;
+    margin-left: 20px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.allDesignList {
+    padding: 50px;
+    background-color:rgb(239,235,233);
+}
+
+.allDesignList .card-deck .card {
+
+    margin-bottom: 50px;
+
+
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination .body a {
+    text-decoration: none;
+    margin: 5px;
+    color: #B1A296 !important;
+}
+.splashScreen{
+    position: fixed;
+    background-color: rgb(117,117,117);
+    width:100%;
+    height: 800px;
+    padding-top: 80px;
+    z-index: 10;
+    opacity: 95%;
+    text-align: center;
+    transition: height 0.3s, opacity 0.3s;
+    align-items: center;
+}
+
+.splashScreen .img {
+    max-width: 50%;
+    height: auto;
+    
+}
+
+.coverPhoto {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.coverHead {
+    font-size: 60px;
+    padding-left: 20px;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    text-shadow: black 1px 0 20px;
+}
+
+.allImages {
+    padding: 50px;
+    background-color:rgb(239,235,233);
+}
+
+.allImages .row .head p {
+    color: #B1A296;
+}
+
+.conceptBanner {
+    background-image: url('https://images.unsplash.com/photo-1591825729269-caeb344f6df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+}
+
+.conceptBanner .slogan {
+    font-size: 100px;
+    padding-left: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.conceptDisplay .head {
+    text-align: center;
+}
+
+.conceptDisplay {
+    padding-bottom: 50px;
+}
+
+.allConcepts {
+    padding: 50px;
+    background-color:rgb(239,235,233);
+}
+
+.conceptDisplay p {
+    color: #B1A296;
+}
+
+.conceptDisplay .pagination{
+    margin-top: 20px;
+}
+
+.allConcepts .conceptDisplay a{
+    text-decoration: none;
+    color: #B1A296;
+}
+
+.allImages .imageDeck{
+    padding-top: 50px;
+}
+
+.allImages .imageDeck .card{
+    margin-top: 20px;
+
+}
+
+.terms {
+    padding: 50px;
+    background-color:rgb(239,235,233);
+}

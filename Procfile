@@ -1,0 +1,1 @@
+web: gunicorn HomeDesign.wsgi --log-file -

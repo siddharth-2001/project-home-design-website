@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+   Get a Quote
+{% endblock %}
+
+{% block content %}
+   <div class="quote-form" style="text-align: center;">
+    <div class="quote-head">
+        <h1 data-aos = "zoom-out">Enter Your Details</h1>
+    </div>
+    <div class="row" >
+        <div class="col-md-6 col-sm-11 form-body">
+            <form action="{% url 'quote-success' %}" method="POST">{% csrf_token %}
+                <input type="text" name="name" id="name" placeholder="Enter Name"><br>
+                <input type="tel" name="phone" id="phone" placeholder="Enter 10-Digit Mobile Number"><br>
+                <input type="email" name="email" id="email" placeholder="Enter Email"><br>
+                <h3>Select your property type :</h3>
+                <input type="radio" class="radioButton" name="propertyType" id="type1" value="Residential" onclick="show(this.id)" /><h5>Residential</h5>
+                    <div id = "type1choices" style="display: none;">
+                        <input type="radio" class="radioButton" name="property" id="active1" value="Apartment" onclick="hide()"/>Apartment
+                            <div id="active_sub" style="display: none;">
+                                <span>Select type: </span>
+                                <label><input type="radio" class="radioButton" name="rooms[]" id="roomCount" value="1" onclick="show_room()" /> 1 BHK</label>
+                                <label><input type="radio" class="radioButton" name="rooms[]" id="roomCount" value="2" onclick="show_room()" /> 2 BHK</label>
+                                <label><input type="radio" class="radioButton" name="rooms[]" id="roomCount" value="3" onclick="show_room()" /> 3 BHK</label>
+                                <label><input type="radio" class="radioButton" name="rooms[]" id="roomCount" value="4" onclick="show_room()" /> 4 BHK</label>
+                            </div>
+                            <div id="roomTypeChoices" style="display: none;">
+                                <input type="checkbox" name="roomType" id="roomType" value="living">Living Room
+                                <input type="checkbox" name="roomType" id="roomType" value="bedroom">Bed Room
+                                <input type="checkbox" name="roomType" id="roomType" value="dining">Dining Room
+                                <input type="checkbox" name="roomType" id="roomType" value="studyroom">Study Room
+                                <input type="checkbox" name="roomType" id="roomType" value="library">Library
+                            </div>
+                        <input type="radio" name="property" class="radioButton" id="active" value="Villa" onclick="hide()"/> Villa
+                        <input type="radio" name="property" class="radioButton" id="active" value="Penthouse" onclick="hide()"/> Penthouse
+                        <input type="radio" name="property" class="radioButton" id="active" value="Bunglow" onclick="hide()"/> Bunglow
+                    </div>
+                <input type="radio" name="propertyType" class="radioButton" id="type2" value="Commercial"  onclick="show(this.id)"><h5>Commercial</h5>
+                    <div id = "type2choices" style="display: none;"> 
+                        <input type="radio" name="property" class="radioButton" id="active" value="Office" onclick="hide()"/> Office 
+                        <input type="radio" name="property" class="radioButton" id="active" value="Shop" onclick="hide()"/> Shop 
+                        <input type="radio" name="property" class="radioButton" id="active" value="Showroom" onclick="hide()"/> Showroom 
+                        <input type="radio" name="property" class="radioButton" id="active" value="Boutique" onclick="hide()"/> Boutique 
+                        <input type="radio" name="property" class="radioButton" id="active" value="Warehouse" onclick="hide()"/> Warehouse 
+                    </div>
+                <input type="radio" name="propertyType" class="radioButton" id="type3" value="Hospitality" onclick="show(this.id)"><h5>Hospitality</h5>
+                    <div id = "type3choices" style="display: none;"> 
+                        <input type="radio" name="property" class="radioButton" id="active" value="Restaurant" onclick="hide()"/> Restaurant
+                        <input type="radio" name="property" class="radioButton" id="active" value="Hotel" onclick="hide()"/> Hotel
+                        <input type="radio" name="property" class="radioButton" id="active" value="Kitchenette" onclick="hide()"/> Kitchenette
+                        <input type="radio" name="property" class="radioButton" id="active" value="Hospital" onclick="hide()"/> Hospital
+                        <input type="radio" name="property" class="radioButton" id="active" value="Clinic" onclick="hide()"/> Clinic
+                        <input type="radio" name="property" class="radioButton" id="active" value="Pub/Bar" onclick="hide()"/> Pub/Bar
+                    </div>
+                <p><input type="number" name="area" id="" placeholder="Area in Sqft"></p>
+               <p><input type="text" name="address" id="" placeholder="Enter your address"></p>
+               <p><input type="number" name="pincode" id="" placeholder="Enter your pincode"></p>
+               <p><input type="number" name="budget" placeholder="Enter your budget"></p>
+               <input type="submit" value="Submit" style="background-color:#557A95 ; border-radius: 50px;"> 
+               </form>
+        </div>
+    </div>
+   </div>
+
+   <script>
+      function hide() {
+        // Get the checkbox
+        var radio = document.getElementById("active1");
+        // Get the output text
+        var text = document.getElementById("active_sub");
+
+        // If the checkbox is checked, display the output text
+        if (radio.checked == true){
+            text.style.display = "block";
+        } else {
+            text.style.display = "none";
+        }
+        }
+        function show(id) {
+            var choice1 = document.getElementById('type1choices');
+            var choice2 = document.getElementById('type2choices');
+            var choice3 = document.getElementById('type3choices');
+            if(id == 'type1'){
+
+                var choices = document.getElementById('type1choices');
+                choices.style.display = "block";
+                choice2.style.display = "none";
+                choice3.style.display = "none";
+            }
+            else if(id == 'type2'){
+                var choices = document.getElementById('type2choices');
+                choices.style.display = "block";
+                choice1.style.display = "none";
+                choice3.style.display = "none";
+            }
+            else if(id == 'type3'){
+                var choices = document.getElementById('type3choices');
+                choices.style.display = "block";
+                choice1.style.display = "none";
+                choice2.style.display = "none";
+            }
+        }
+        function show_room() {
+            var box = document.getElementById("active1");
+            var room_choice = document.getElementById("roomTypeChoices");
+            if(box.checked == true){
+                room_choice.style.display = "block";
+            }
+            else {
+                room_choice.style.display = "none";
+            }
+        }
+   </script>
+{% endblock %}
